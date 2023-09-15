@@ -1,8 +1,11 @@
 const convert = document.getElementById("convert");
+const moedaaconverter = document.querySelector("#moeda-a-converter");
 const moedaaserconvertida = document.getElementById("moeda-a-ser-convertida");
 const valormoedaconvertida = document.querySelector(".valor-moeda-convertida");
-
 const descricaomoedaconvertida = document.querySelector(".descricao-moeda-convertida");
+const imgcurrencyaconverter = document.querySelector(".img-currency-a-converter");
+const descricaomoedaaserconvertida = document.querySelector(".descricao-moeda-a-converter");
+const valormoedaaconverter = document.querySelector(".valor-moeda-a-converter");
 const dolartoday = 4.87
 const eurotoday = 5.18
 const libratoday = 6.04
@@ -39,7 +42,6 @@ function calcular(){
             currency: "BTC"
         }).format(input / bitcointoday)
     }
-    
 }
 
 function currancychange() {
@@ -64,7 +66,23 @@ function currancychange() {
     calcular()
 }
 
+
+function changecurancyconvert() {
+    const currancyimg = document.getElementById("currancy-img");
+    const input = document.querySelector("#input").value
+
+    if (moedaaconverter.value == "real") {
+        descricaomoedaaserconvertida.innerHTML = "Real Brasileiro."
+        imgcurrencyaconverter.src = "./Assets/real.png"
+        valormoedaaconverter.innerHTML = new Intl.NumberFormat("pt-BR", {
+            style: "currency", 
+            currency: "BRL"
+        }).format(input)
+    }
+}
+
 convert.addEventListener("click", calcular);
 moedaaserconvertida.addEventListener("change", currancychange);
+moedaaserconvertida.addEventListener("click", changecurancyconvert);
 
 
