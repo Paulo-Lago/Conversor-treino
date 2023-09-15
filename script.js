@@ -7,6 +7,8 @@ const imgcurrencyaconverter = document.querySelector(".img-currency-a-converter"
 const descricaomoedaaserconvertida = document.querySelector(".descricao-moeda-a-converter");
 const valormoedaaconverter = document.querySelector(".valor-moeda-a-converter");
 
+
+/*declarando variaveis das moedas...
 const dolaremreal = 4.8709
 const dolaremeuro = 0.9369
 const dolarembitcoin = 0.000038
@@ -36,6 +38,7 @@ const realemeuro = 0.1924
 const realemlibra = 0.1657
 const realembitcoin = 0.0000078
 const realemreal = 1
+*/
 
 function calcular(){
     const input = document.querySelector("#input").value
@@ -247,7 +250,6 @@ function currancychange() {
     calcular()
 }
 
-
 function changecurancyconvert() {
     const currancyimg = document.getElementById("currancy-img");
     const input = document.querySelector("#input").value
@@ -296,7 +298,6 @@ function changecurancyconvert() {
             currency: "BTC"
         }).format(input)
     }
-    calcular()
 }
 
 convert.addEventListener("click", calcular);
